@@ -37,3 +37,8 @@ body{
     margin-right: 20px;
     background: linear-gradient(#e66465, #9198e5);;
 }
+
+#controller{
+    display: grid;
+    grid-template-columns: 20px 20px 20px;
+}
