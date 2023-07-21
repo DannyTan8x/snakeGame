@@ -49,6 +49,8 @@ body{
 
 .flex{
     display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 #up{
