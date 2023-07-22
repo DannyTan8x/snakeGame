@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 #gameContainer{
+    width: 500px;
     margin-top: 2vh;
     text-align: center;
 }
@@ -44,31 +45,39 @@ body{
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(50px, auto);
     grid-column-gap: 10px;
-  grid-row-gap: 1em;
+    grid-row-gap: 1em;
 }
 
 .flex{
+  width: 550px;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    align-items:  center;
+    justify-content: space-between;
     margin: auto;
+    gap: 20px;
 }
 
 #up{
+  font-size: 50px;
   grid-column-start: 2;
   grid-row-start: 1;
 }
 
 #down{
+  font-size: 50px;
   grid-column-start: 2;
   grid-row-start: 2;
 }
 
 #left{
+  font-size: 50px;
     grid-column-start: 1;
   grid-row-start: 2;
 }
 
 #right{
+  font-size: 50px;
     grid-column-start: 3;
   grid-row-start: 2;
 }

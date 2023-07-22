@@ -2,6 +2,11 @@ const speedDisplay = document.querySelector("#speedDisplay");
 const gameBorad = document.querySelector("#gameBoard");
 const ctx = gameBorad.getContext("2d");
 
+const upBtn =document.getElementById("up");
+const downBtn =document.getElementById("down");
+const leftBtn =document.getElementById("left");
+const rightBtn =document.getElementById("right");
+
 const scoreText = document.querySelector("#scoreText");
 const resetBtn = document.querySelector("#resetBtn");
 const gameWidth = gameBorad.width;
@@ -10,7 +15,7 @@ const boardBackground = "White";
 const snakeColor = "lightgreen";
 const snakeBorder = "black";
 const foodColor = "red";
-const unitSize = 25;
+const unitSize = gameWidth/20;
 let running = false;
 let xVelocity = unitSize;
 let yVelocity = 0;
@@ -27,6 +32,11 @@ let snake = [
 let speed = 150;
 
 window.addEventListener("keydown", changeDirection);
+upBtn.addEventListener("click", changeDirection);
+downBtn.addEventListener("click", changeDirection);
+leftBtn.addEventListener("click", changeDirection);
+rightBtn.addEventListener("click", changeDirection);
+
 resetBtn.addEventListener("click", resetGame);
 
 ctx.font = "30px Permanent Marker";
@@ -112,10 +122,10 @@ function drawSnake(){
 
 function changeDirection(event){
     const keypressed = event.keyCode;
-    const eventKey = event.key
+    const eventKey = event.target.value;
 
 
-    console.log(keypressed);
+    console.log(eventKey);
     const LEFT = 37;
     const UP = 38;
     const RIGHT = 39;
@@ -127,19 +137,19 @@ function changeDirection(event){
     const goingLeft = (xVelocity == -unitSize);
     
     switch(true){
-        case(keypressed == LEFT  && !goingRight):
+        case((keypressed == LEFT || eventKey == LEFT) && !goingRight):
             xVelocity = -unitSize;
             yVelocity = 0;
             break;
-        case(keypressed == UP  && !goingDown):
+        case((keypressed == UP || eventKey == UP) && !goingDown):
             xVelocity = 0;
             yVelocity = -unitSize;
             break;
-        case(keypressed == RIGHT  && !goingLeft):
+        case((keypressed == RIGHT || eventKey == RIGHT) && !goingLeft):
             xVelocity = unitSize;
             yVelocity = 0;
             break;
-        case(keypressed == DOWN  && !goingUp):
+        case((keypressed == DOWN || eventKey == DOWN) && !goingUp):
             xVelocity = 0;
             yVelocity = unitSize;
             break;
