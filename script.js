@@ -1,4 +1,4 @@
-const speedDisplay = document.querySelector("#speedDisplay");
+// const speedDisplay = document.querySelector("#speedDisplay");
 const gameBorad = document.querySelector("#gameBoard");
 const ctx = gameBorad.getContext("2d");
 
@@ -105,7 +105,7 @@ function moveSnake(){
         speed -= 5;
         scoreText.textContent = score;
         createFood();
-        speedDisplay.height += 10;
+        // speedDisplay.height += 10;
     }else{
         snake.pop();
     }
@@ -203,5 +203,5 @@ function resetGame(){
         {x:0, y:0}];
     gameStart();
     speed = 150;
-    speedDisplay.height = 25;
+    // speedDisplay.height = 25;
 };
